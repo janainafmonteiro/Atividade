@@ -1,0 +1,263 @@
+import java.util.Scanner;
+
+public class livro {
+    public static void main(String[] args) {
+        System.out.println("Escolha a questão");
+        Scanner sc1 = new Scanner(System.in);
+        int numQuestao;
+        numQuestao = sc1.nextInt();
+        switch (numQuestao) {
+            case 1: //5.3 a)
+            int sum = 0;
+            int count;
+            System.out.println("Soma dos números ímpares entre 1 e 99");
+            for(count = 1; count<100;count++){
+                if(count%2!=0){
+                    sum+=count;
+                }
+            }
+            System.out.println(sum);
+            break;
+            case 2: //5.3 b)
+            double valor = 2.5;
+            int expoente = 3;
+            double resultado = Math.pow(valor, expoente);
+            System.out.println(resultado);
+            break;
+            case 3: //5.3 c)
+            int i = 1;
+            while(i<21){                   
+                if(i%5==0){
+                    System.out.println(i);
+                }else{
+                    System.out.print(i + "\t");
+                }
+                i++;
+            }
+            break;
+
+            case 4: //5.3 d)
+            for(i=1; i<21;i++){
+                if(i%5==0){
+                    System.out.println(i);
+                }else{
+                    System.out.print(i + "\t");
+                }
+            }
+            break;
+            case 5: //5.11
+            System.out.println("Digite quantos termos quer digitar");
+            int numLidos = sc1.nextInt();
+            int menor = 999999;
+            for(i = 0; i<numLidos; i++){    
+                int numInserido= sc1.nextInt();
+                if(numInserido<menor){
+                    menor = numInserido;
+                }
+            }
+            System.out.println("O menor número é:" + menor);
+            break;
+            case 6: //5.12
+            int produto=1;
+            for(i=1;i<16;i++){
+                if(i%2!=0){
+                    produto*=i;
+                }
+            }
+            System.out.println(produto);
+            break;
+            case 7: //5.13
+            long fatorial=1;
+            for(i=1;i<21;i++){
+                fatorial*=i;
+                System.out.print(fatorial + "\t");
+
+            }         
+            break;
+            case 8: //5.14
+            double p=1000;
+            double a=0;
+            double juros;
+            for(int r=5; r<11; r++){
+                juros = r/100;
+                a+=p*(1+juros);
+            }
+            
+            System.out.println(a);
+            break;
+            case 9: //5.15 a)
+            for(i=1;i<11;i++){
+                for(int j=1;j<=i;j++){
+                    System.out.print("*");
+                }
+                System.out.println("");
+            }
+            break;
+            case 10: //5.15 b)
+            for(i=10;i>0;i--){
+                for(int j=1;j<i;j++){
+                    System.out.print("*");
+                }
+                System.out.println("");
+            }
+            break;
+            case 11: //5.15 c)
+            for(i=10;i>0;i--){
+                for(int k=i-1;k<9;k++){
+                    System.out.print(" ");
+                }
+                for(int j=1;j<i;j++){
+                    System.out.print("*");
+                }
+                System.out.println("");
+            }
+            break;
+            case 12: //5.15 d)
+            for(i=1;i<11;i++){
+                for(int k=10;k>i;k--){
+                    System.out.print(" ");
+                }
+                for(int j=1;j<=i;j++){
+                    System.out.print("*");
+                }
+                System.out.println("");
+            }
+            break;
+            case 13: //5.16
+            int soma=0;
+            int num;
+            for(i=0;i<5;i++){
+                do { 
+                    System.out.println("Digite um número");
+                    num = sc1.nextInt();
+                    if(num>=1 && num<=30){
+                        soma+= num;
+                    }else{
+                        System.out.println("Digite outro número");
+                    }
+                } while (num<1 || num>30);
+                
+            }
+            for(i=0;i<soma;i++){
+                System.out.print("*");
+            }
+            break;
+            case 14: //5.18
+            int  quantiaInvestida, numAnos;
+            double jurosAnual = 10/100.0 + 1;
+            quantiaInvestida = 1000;
+            numAnos = 10;
+            double fimDeposito = Math.pow(jurosAnual, numAnos);   
+            fimDeposito *= quantiaInvestida;       
+            System.out.println(fimDeposito);
+            break;
+            case 15: //5.21
+            int side1, side2;
+            double hypotenuse;
+            for(side1=1; side1<501;side1++){
+                for(side2=1; side2<501; side2++){
+                    hypotenuse = Math.pow(side1, 2)+ Math.pow(side2, 2);
+                    hypotenuse = Math.sqrt(hypotenuse);
+                    if(hypotenuse == (int) hypotenuse){
+                        System.out.println(side1 + "+" + side2 + "=" + hypotenuse);
+                    }
+                       
+                }
+            }
+            break;
+            case 16: //5.22
+            for(i=1;i<11;i++){
+                for(int j=1;j<=i;j++){
+                    System.out.print("*"); //A
+                }
+                for(int k=10;k>i;k--){
+                    System.out.print(" ");
+                }
+                System.out.print(" ");
+                for(int l=10;l>=i;l--){
+                    System.out.print("*");//B
+                }
+                for(int f=0;f<=i;f++){
+                    System.out.print(" ");
+                }
+
+                for(int f=0;f<=i;f++){
+                    System.out.print(" ");
+                }
+                for(int n=10;n>=i;n--){
+                    System.out.print("*"); //C
+                }
+                for(int o=10;o>i;o--){
+                    System.out.print(" ");
+                }
+                System.out.print(" ");
+                for(int q=1;q<=i;q++){
+                    System.out.print("*");//D
+                }
+
+                System.out.println("");
+            }
+            break;
+            case 17: //5.24
+            for(i=0;i<5;i++){
+                for(int j=5;j>=i;j--){
+                    System.out.print(" ");
+                }
+                for(int z= 0; z<=2*i; z++){
+                    System.out.print("*");
+                }
+                System.out.println("");
+            }
+            for(i=5;i>0;i--){
+                for(int j=5;j>=i-2;j--){
+                    System.out.print(" ");
+                }
+                for(int z= 0; z<=i*2-4; z++){
+                    System.out.print("*");
+                }
+                System.out.println("");
+            }
+            break;
+            case 18: //5.25
+            int linhas = sc1.nextInt();
+            for(i=0;i<linhas;i++){
+                for(int j=linhas;j>=i;j--){
+                    System.out.print(" ");
+                }
+                for(int z= 0; z<=2*i; z++){
+                    System.out.print("*");
+                }
+                System.out.println("");
+            }
+            for(i=linhas;i>0;i--){
+                for(int j=linhas;j>=i-2;j--){
+                    System.out.print(" ");
+                }
+                for(int z= 0; z<=i*2-4; z++){
+                    System.out.print("*");
+                }
+                System.out.println("");
+            }
+            break;
+            case 19: //5.20
+            double denominador;
+            double pi= 4;
+            int sinal=-1;
+            int contador =0;
+            for(denominador = 3; denominador < 400000; denominador+=2){
+                pi += sinal*4/denominador;
+                contador++;
+                sinal = contador % 2 == 0 ? -1 : 1;
+                double dif = pi-3.14159;
+                if(dif<0.00001 && dif>0){
+                    System.out.println("pi está em: "+ pi + "\nFomos ate o denominador: " + denominador);
+                    return;
+                }
+
+            }
+            break;
+
+           
+        }
+    }
+}
